@@ -10,8 +10,8 @@
 
 @implementation FOTDataManager
 
-+ (void)getAllsvenskan:(void(^)(NSArray *))callback {
-    NSString *url = @"http://54.203.255.93:8000/table/allsvenskan";
++ (void)getTable:(NSString *)division callback:(void(^)(NSArray *))callback {
+    NSString *url = [NSString stringWithFormat:@"http://54.203.255.93:8000/table/%@", division];
     [MSLHttp getAsyncJson:url completionHandler:^(NSArray *json) {
         NSMutableArray *teams = [NSMutableArray array];
         for (NSDictionary *team in json) {

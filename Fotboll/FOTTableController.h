@@ -12,4 +12,6 @@
 
 @interface FOTTableController : UITableViewController
 
+- (void)setTable:(NSString *)division;
+
 @end

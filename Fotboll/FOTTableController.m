@@ -19,13 +19,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [FOTDataManager getAllsvenskan:^(NSArray *teams) {
+	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)setTable:(NSString *)division {
+    [FOTDataManager getTable:division callback:^(NSArray *teams) {
         self.teams = teams;
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             [self.tableView reloadData];
         }];
     }];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -46,7 +49,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
-    return  55.0;
+    return  45.0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

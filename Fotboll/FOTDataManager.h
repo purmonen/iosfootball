@@ -12,6 +12,6 @@
 
 @interface FOTDataManager : NSObject
 
-+ (void)getAllsvenskan:(void(^)(NSArray *))callback;
++ (void)getTable:(NSString *)division callback:(void(^)(NSArray *))callback;
 
 @end
