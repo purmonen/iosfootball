@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		267B457718EC78780046D1AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267B457618EC78780046D1AA /* Foundation.framework */; };
+		267B457918EC78780046D1AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267B457818EC78780046D1AA /* CoreGraphics.framework */; };
+		267B457B18EC78780046D1AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267B457A18EC78780046D1AA /* UIKit.framework */; };
+		267B458118EC78780046D1AA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 267B457F18EC78780046D1AA /* InfoPlist.strings */; };
+		267B458318EC78780046D1AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B458218EC78780046D1AA /* main.m */; };
+		267B458718EC78780046D1AA /* FOTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B458618EC78780046D1AA /* FOTAppDelegate.m */; };
+		267B458A18EC78780046D1AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 267B458818EC78780046D1AA /* Main.storyboard */; };
+		267B458D18EC78780046D1AA /* FOTTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B458C18EC78780046D1AA /* FOTTableController.m */; };
+		267B458F18EC78780046D1AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 267B458E18EC78780046D1AA /* Images.xcassets */; };
+		267B459618EC78790046D1AA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267B459518EC78790046D1AA /* XCTest.framework */; };
+		267B459718EC78790046D1AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267B457618EC78780046D1AA /* Foundation.framework */; };
+		267B459818EC78790046D1AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267B457A18EC78780046D1AA /* UIKit.framework */; };
+		267B45A018EC78790046D1AA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 267B459E18EC78790046D1AA /* InfoPlist.strings */; };
+		267B45A218EC78790046D1AA /* FotbollTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B45A118EC78790046D1AA /* FotbollTests.m */; };
+		267B45AE18EC78D90046D1AA /* MSLHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B45AD18EC78D90046D1AA /* MSLHttp.m */; };
+		267B45B118EC79060046D1AA /* FOTDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B45B018EC79060046D1AA /* FOTDataManager.m */; };
+		267B45B418EC791A0046D1AA /* FOTTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B45B318EC791A0046D1AA /* FOTTeam.m */; };
+		26A40A5A18EC849C0000A517 /* FOTTeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A40A5918EC849C0000A517 /* FOTTeamCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		267B459918EC78790046D1AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 267B456B18EC78780046D1AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 267B457218EC78780046D1AA;
+			remoteInfo = Fotboll;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		267B457318EC78780046D1AA /* Fotboll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fotboll.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		267B457618EC78780046D1AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		267B457818EC78780046D1AA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		267B457A18EC78780046D1AA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		267B457E18EC78780046D1AA /* Fotboll-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Fotboll-Info.plist"; sourceTree = "<group>"; };
+		267B458018EC78780046D1AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		267B458218EC78780046D1AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		267B458418EC78780046D1AA /* Fotboll-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fotboll-Prefix.pch"; sourceTree = "<group>"; };
+		267B458518EC78780046D1AA /* FOTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOTAppDelegate.h; sourceTree = "<group>"; };
+		267B458618EC78780046D1AA /* FOTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FOTAppDelegate.m; sourceTree = "<group>"; };
+		267B458918EC78780046D1AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		267B458B18EC78780046D1AA /* FOTTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOTTableController.h; sourceTree = "<group>"; };
+		267B458C18EC78780046D1AA /* FOTTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FOTTableController.m; sourceTree = "<group>"; };
+		267B458E18EC78780046D1AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		267B459418EC78790046D1AA /* FotbollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FotbollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		267B459518EC78790046D1AA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		267B459D18EC78790046D1AA /* FotbollTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FotbollTests-Info.plist"; sourceTree = "<group>"; };
+		267B459F18EC78790046D1AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		267B45A118EC78790046D1AA /* FotbollTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FotbollTests.m; sourceTree = "<group>"; };
+		267B45AC18EC78D90046D1AA /* MSLHttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLHttp.h; sourceTree = "<group>"; };
+		267B45AD18EC78D90046D1AA /* MSLHttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLHttp.m; sourceTree = "<group>"; };
+		267B45AF18EC79060046D1AA /* FOTDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTDataManager.h; sourceTree = "<group>"; };
+		267B45B018EC79060046D1AA /* FOTDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTDataManager.m; sourceTree = "<group>"; };
+		267B45B218EC791A0046D1AA /* FOTTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTTeam.h; sourceTree = "<group>"; };
+		267B45B318EC791A0046D1AA /* FOTTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTTeam.m; sourceTree = "<group>"; };
+		26A40A5818EC849C0000A517 /* FOTTeamCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTTeamCell.h; sourceTree = "<group>"; };
+		26A40A5918EC849C0000A517 /* FOTTeamCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTTeamCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		267B457018EC78780046D1AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				267B457918EC78780046D1AA /* CoreGraphics.framework in Frameworks */,
+				267B457B18EC78780046D1AA /* UIKit.framework in Frameworks */,
+				267B457718EC78780046D1AA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		267B459118EC78790046D1AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				267B459618EC78790046D1AA /* XCTest.framework in Frameworks */,
+				267B459818EC78790046D1AA /* UIKit.framework in Frameworks */,
+				267B459718EC78790046D1AA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		267B456A18EC78780046D1AA = {
+			isa = PBXGroup;
+			children = (
+				267B457C18EC78780046D1AA /* Fotboll */,
+				267B459B18EC78790046D1AA /* FotbollTests */,
+				267B457518EC78780046D1AA /* Frameworks */,
+				267B457418EC78780046D1AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		267B457418EC78780046D1AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				267B457318EC78780046D1AA /* Fotboll.app */,
+				267B459418EC78790046D1AA /* FotbollTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		267B457518EC78780046D1AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				267B457618EC78780046D1AA /* Foundation.framework */,
+				267B457818EC78780046D1AA /* CoreGraphics.framework */,
+				267B457A18EC78780046D1AA /* UIKit.framework */,
+				267B459518EC78790046D1AA /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		267B457C18EC78780046D1AA /* Fotboll */ = {
+			isa = PBXGroup;
+			children = (
+				267B458518EC78780046D1AA /* FOTAppDelegate.h */,
+				267B458618EC78780046D1AA /* FOTAppDelegate.m */,
+				26A40A5818EC849C0000A517 /* FOTTeamCell.h */,
+				26A40A5918EC849C0000A517 /* FOTTeamCell.m */,
+				267B458818EC78780046D1AA /* Main.storyboard */,
+				267B458B18EC78780046D1AA /* FOTTableController.h */,
+				267B458C18EC78780046D1AA /* FOTTableController.m */,
+				267B45AF18EC79060046D1AA /* FOTDataManager.h */,
+				267B45B018EC79060046D1AA /* FOTDataManager.m */,
+				267B45B218EC791A0046D1AA /* FOTTeam.h */,
+				267B45B318EC791A0046D1AA /* FOTTeam.m */,
+				267B45AB18EC78A00046D1AA /* Backend */,
+				267B458E18EC78780046D1AA /* Images.xcassets */,
+				267B457D18EC78780046D1AA /* Supporting Files */,
+			);
+			path = Fotboll;
+			sourceTree = "<group>";
+		};
+		267B457D18EC78780046D1AA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				267B457E18EC78780046D1AA /* Fotboll-Info.plist */,
+				267B457F18EC78780046D1AA /* InfoPlist.strings */,
+				267B458218EC78780046D1AA /* main.m */,
+				267B458418EC78780046D1AA /* Fotboll-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		267B459B18EC78790046D1AA /* FotbollTests */ = {
+			isa = PBXGroup;
+			children = (
+				267B45A118EC78790046D1AA /* FotbollTests.m */,
+				267B459C18EC78790046D1AA /* Supporting Files */,
+			);
+			path = FotbollTests;
+			sourceTree = "<group>";
+		};
+		267B459C18EC78790046D1AA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				267B459D18EC78790046D1AA /* FotbollTests-Info.plist */,
+				267B459E18EC78790046D1AA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		267B45AB18EC78A00046D1AA /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				267B45AC18EC78D90046D1AA /* MSLHttp.h */,
+				267B45AD18EC78D90046D1AA /* MSLHttp.m */,
+			);
+			name = Backend;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		267B457218EC78780046D1AA /* Fotboll */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 267B45A518EC78790046D1AA /* Build configuration list for PBXNativeTarget "Fotboll" */;
+			buildPhases = (
+				267B456F18EC78780046D1AA /* Sources */,
+				267B457018EC78780046D1AA /* Frameworks */,
+				267B457118EC78780046D1AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fotboll;
+			productName = Fotboll;
+			productReference = 267B457318EC78780046D1AA /* Fotboll.app */;
+			productType = "com.apple.product-type.application";
+		};
+		267B459318EC78790046D1AA /* FotbollTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 267B45A818EC78790046D1AA /* Build configuration list for PBXNativeTarget "FotbollTests" */;
+			buildPhases = (
+				267B459018EC78790046D1AA /* Sources */,
+				267B459118EC78790046D1AA /* Frameworks */,
+				267B459218EC78790046D1AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				267B459A18EC78790046D1AA /* PBXTargetDependency */,
+			);
+			name = FotbollTests;
+			productName = FotbollTests;
+			productReference = 267B459418EC78790046D1AA /* FotbollTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		267B456B18EC78780046D1AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FOT;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Sami Purmonen";
+				TargetAttributes = {
+					267B459318EC78790046D1AA = {
+						TestTargetID = 267B457218EC78780046D1AA;
+					};
+				};
+			};
+			buildConfigurationList = 267B456E18EC78780046D1AA /* Build configuration list for PBXProject "Fotboll" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 267B456A18EC78780046D1AA;
+			productRefGroup = 267B457418EC78780046D1AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				267B457218EC78780046D1AA /* Fotboll */,
+				267B459318EC78790046D1AA /* FotbollTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		267B457118EC78780046D1AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				267B458F18EC78780046D1AA /* Images.xcassets in Resources */,
+				267B458118EC78780046D1AA /* InfoPlist.strings in Resources */,
+				267B458A18EC78780046D1AA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		267B459218EC78790046D1AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				267B45A018EC78790046D1AA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		267B456F18EC78780046D1AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				267B45AE18EC78D90046D1AA /* MSLHttp.m in Sources */,
+				267B458718EC78780046D1AA /* FOTAppDelegate.m in Sources */,
+				267B45B118EC79060046D1AA /* FOTDataManager.m in Sources */,
+				267B45B418EC791A0046D1AA /* FOTTeam.m in Sources */,
+				267B458318EC78780046D1AA /* main.m in Sources */,
+				26A40A5A18EC849C0000A517 /* FOTTeamCell.m in Sources */,
+				267B458D18EC78780046D1AA /* FOTTableController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		267B459018EC78790046D1AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				267B45A218EC78790046D1AA /* FotbollTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		267B459A18EC78790046D1AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 267B457218EC78780046D1AA /* Fotboll */;
+			targetProxy = 267B459918EC78790046D1AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		267B457F18EC78780046D1AA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				267B458018EC78780046D1AA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		267B458818EC78780046D1AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				267B458918EC78780046D1AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		267B459E18EC78790046D1AA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				267B459F18EC78790046D1AA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		267B45A318EC78790046D1AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		267B45A418EC78790046D1AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		267B45A618EC78790046D1AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Fotboll/Fotboll-Prefix.pch";
+				INFOPLIST_FILE = "Fotboll/Fotboll-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		267B45A718EC78790046D1AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Fotboll/Fotboll-Prefix.pch";
+				INFOPLIST_FILE = "Fotboll/Fotboll-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		267B45A918EC78790046D1AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Fotboll.app/Fotboll";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Fotboll/Fotboll-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FotbollTests/FotbollTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		267B45AA18EC78790046D1AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Fotboll.app/Fotboll";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Fotboll/Fotboll-Prefix.pch";
+				INFOPLIST_FILE = "FotbollTests/FotbollTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		267B456E18EC78780046D1AA /* Build configuration list for PBXProject "Fotboll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				267B45A318EC78790046D1AA /* Debug */,
+				267B45A418EC78790046D1AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		267B45A518EC78790046D1AA /* Build configuration list for PBXNativeTarget "Fotboll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				267B45A618EC78790046D1AA /* Debug */,
+				267B45A718EC78790046D1AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		267B45A818EC78790046D1AA /* Build configuration list for PBXNativeTarget "FotbollTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				267B45A918EC78790046D1AA /* Debug */,
+				267B45AA18EC78790046D1AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 267B456B18EC78780046D1AA /* Project object */;
+}
