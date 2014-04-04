@@ -12,6 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property FOTTableController *tableController;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UILabel *yearLabel;
+
 @end
 
 @implementation FOTDisplayTableController
@@ -27,26 +30,40 @@
 
 - (void)viewDidLoad
 {
+    //self.year = 2014;
     NSLog(@"%ld", (long)[self.childViewControllers count]);
     [self.segmentedControl addTarget:self action:@selector(changeTable) forControlEvents:UIControlEventValueChanged];
     [super viewDidLoad];
     self.tableController = [self.childViewControllers firstObject];
     [self changeTable];
+    self.activityIndicator.hidesWhenStopped = YES;
     // Do any additional setup after loading the view.
 }
 
 - (void)changeTable {
+    self.yearLabel.text = [NSString stringWithFormat:@"%ld", (long)self.year];
+
+    [self.activityIndicator startAnimating];
+    NSString *division;
     if (self.segmentedControl.selectedSegmentIndex == 0) {
-        [self.tableController setTable:@"allsvenskan"];
+        division = @"allsvenskan";
     } else {
-        [self.tableController setTable:@"superettan"];
+        division = @"superettan";
     }
+    UIActivityIndicatorView *indicator = self.activityIndicator;
+    [self.tableController setTable:division year:self.year callback:^{
+        [indicator stopAnimating];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)yearChanged:(UIStepper *)sender {
+    self.year = sender.value;
+    [self changeTable];
 }
 
 /*

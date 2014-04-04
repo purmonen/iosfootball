@@ -11,22 +11,26 @@
 @interface FOTTableController ()
 
 @property NSArray *teams;
-
+@property (weak, nonatomic) IBOutlet UILabel *yearLabel;
+@property (weak, nonatomic) IBOutlet UIStepper *stepper;
 @end
 
 @implementation FOTTableController
 
 - (void)viewDidLoad
 {
+    self.year = 2014;
+    self.stepper.value = self.year;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)setTable:(NSString *)division {
-    [FOTDataManager getTable:division callback:^(NSArray *teams) {
+- (void)setTable:(NSString *)division year:(NSInteger)year callback:(void(^)(void))callback {
+    [FOTDataManager loadTeamsForDivision:division year:year callback:^(NSArray *teams) {
         self.teams = teams;
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             [self.tableView reloadData];
+            callback();
         }];
     }];
 }
@@ -34,22 +38,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FOTTeamCell *cell = [tableView dequeueReusableCellWithIdentifier:@"teamCell"];
     FOTTeam *team = [self.teams objectAtIndex:indexPath.row];
-    cell.nameLabel.text = team.name;
+    cell.nameLabel.text = [NSString stringWithFormat:@"%ld. %@", (long)indexPath.row + 1, team.name];
     cell.gamesPlayedLabel.text = [NSString stringWithFormat:@"%ld", (long)team.gamesPlayed];
     cell.goalDifference.text = [NSString stringWithFormat:@"%ld", (long)team.goalDifference];
     cell.pointsLabel.text = [NSString stringWithFormat:@"%ld", (long)team.points];
     cell.teamImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", team.id]];
     return cell;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UITableViewCell *headerView = [tableView dequeueReusableCellWithIdentifier:@"headerCell"];
-    return headerView;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    
-    return  45.0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

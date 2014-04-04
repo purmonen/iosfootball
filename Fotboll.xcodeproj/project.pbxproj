@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		260872F018EEA56300C37628 /* FOTModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 260872EF18EEA56300C37628 /* FOTModelController.m */; };
+		260872F318EEA58200C37628 /* FOTRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 260872F218EEA58200C37628 /* FOTRootViewController.m */; };
 		267B457718EC78780046D1AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267B457618EC78780046D1AA /* Foundation.framework */; };
 		267B457918EC78780046D1AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267B457818EC78780046D1AA /* CoreGraphics.framework */; };
 		267B457B18EC78780046D1AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267B457A18EC78780046D1AA /* UIKit.framework */; };
@@ -39,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		260872EE18EEA56300C37628 /* FOTModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTModelController.h; sourceTree = "<group>"; };
+		260872EF18EEA56300C37628 /* FOTModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTModelController.m; sourceTree = "<group>"; };
+		260872F118EEA58200C37628 /* FOTRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTRootViewController.h; sourceTree = "<group>"; };
+		260872F218EEA58200C37628 /* FOTRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTRootViewController.m; sourceTree = "<group>"; };
 		267B457318EC78780046D1AA /* Fotboll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fotboll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		267B457618EC78780046D1AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		267B457818EC78780046D1AA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,6 +140,10 @@
 				267B458818EC78780046D1AA /* Main.storyboard */,
 				26A40ADB18ECD1AB0000A517 /* FOTDisplayTableController.h */,
 				26A40ADC18ECD1AB0000A517 /* FOTDisplayTableController.m */,
+				260872EE18EEA56300C37628 /* FOTModelController.h */,
+				260872EF18EEA56300C37628 /* FOTModelController.m */,
+				260872F118EEA58200C37628 /* FOTRootViewController.h */,
+				260872F218EEA58200C37628 /* FOTRootViewController.m */,
 				267B458B18EC78780046D1AA /* FOTTableController.h */,
 				267B458C18EC78780046D1AA /* FOTTableController.m */,
 				267B45AF18EC79060046D1AA /* FOTDataManager.h */,
@@ -285,7 +295,9 @@
 			files = (
 				267B45AE18EC78D90046D1AA /* MSLHttp.m in Sources */,
 				26A40ADD18ECD1AB0000A517 /* FOTDisplayTableController.m in Sources */,
+				260872F318EEA58200C37628 /* FOTRootViewController.m in Sources */,
 				267B458718EC78780046D1AA /* FOTAppDelegate.m in Sources */,
+				260872F018EEA56300C37628 /* FOTModelController.m in Sources */,
 				267B45B118EC79060046D1AA /* FOTDataManager.m in Sources */,
 				267B45B418EC791A0046D1AA /* FOTTeam.m in Sources */,
 				267B458318EC78780046D1AA /* main.m in Sources */,

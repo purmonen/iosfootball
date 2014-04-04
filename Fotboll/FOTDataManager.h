@@ -12,6 +12,7 @@
 
 @interface FOTDataManager : NSObject
 
-+ (void)getTable:(NSString *)division callback:(void(^)(NSArray *))callback;
++ (void)loadTeamsForDivision:(NSString *)division year:(NSInteger)year callback:(void(^)(NSArray *))callback;
++ (void)getTeamsForDivision:(NSString *)division year:(NSInteger)year callback:(void(^)(NSArray *))callback;
 
 @end

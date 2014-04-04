@@ -20,4 +20,8 @@
 @property NSInteger goalDifference;
 @property NSInteger points;
 @property NSString *id;
+
++ (FOTTeam *)fromJson:(id)json;
+- (id)toJson;
+
 @end

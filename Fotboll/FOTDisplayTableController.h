@@ -11,4 +11,6 @@
 
 @interface FOTDisplayTableController : UIViewController
 
+@property NSInteger year;
+
 @end
