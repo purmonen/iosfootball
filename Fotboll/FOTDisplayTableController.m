@@ -40,18 +40,20 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)changeTable {
-    self.yearLabel.text = [NSString stringWithFormat:@"%ld", (long)self.year];
+- (NSString *)getDivision {
+    return self.segmentedControl.selectedSegmentIndex ? @"superettan" : @"allsvenskan";
+}
 
+- (void)changeTable {
+    [self setTable:NO];
+}
+
+- (void)setTable:(BOOL)update {
+    self.yearLabel.text = [NSString stringWithFormat:@"%ld", (long)self.year];
+    
     [self.activityIndicator startAnimating];
-    NSString *division;
-    if (self.segmentedControl.selectedSegmentIndex == 0) {
-        division = @"allsvenskan";
-    } else {
-        division = @"superettan";
-    }
     UIActivityIndicatorView *indicator = self.activityIndicator;
-    [self.tableController setTable:division year:self.year callback:^{
+    [self.tableController setTable:[self getDivision] year:self.year update:update callback:^{
         [indicator stopAnimating];
     }];
 }
@@ -76,5 +78,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)updateTeams:(id)sender {
+    [self setTable:YES];
+}
 
 @end

@@ -12,7 +12,7 @@
 
 @interface FOTTableController : UITableViewController
 
-- (void)setTable:(NSString *)division year:(NSInteger)year callback:(void(^)(void))callback;
+- (void)setTable:(NSString *)division year:(NSInteger)year update:(BOOL)update callback:(void(^)(void))callback;
 @property NSInteger year;
 
 @end

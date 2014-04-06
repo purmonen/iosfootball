@@ -25,8 +25,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)setTable:(NSString *)division year:(NSInteger)year callback:(void(^)(void))callback {
-    [FOTDataManager loadTeamsForDivision:division year:year callback:^(NSArray *teams) {
+- (void)setTable:(NSString *)division year:(NSInteger)year update:(BOOL)update callback:(void(^)(void))callback {
+    [FOTDataManager loadTeamsForDivision:division year:year update:update callback:^(NSArray *teams) {
         self.teams = teams;
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             [self.tableView reloadData];
@@ -53,6 +53,8 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
+
+
 
 
 - (void)didReceiveMemoryWarning

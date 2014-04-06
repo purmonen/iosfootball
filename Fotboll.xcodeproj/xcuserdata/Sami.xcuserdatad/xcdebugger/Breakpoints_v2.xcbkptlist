@@ -10,11 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fotboll/FOTDataManager.m"
-            timestampString = "418150855.531883"
+            timestampString = "418474394.146571"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "10"
-            endingLineNumber = "10">
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "@interface FOTDataManager()"
+            landmarkType = "2">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -40,13 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fotboll/FOTDataManager.m"
-            timestampString = "418286739.44587"
+            timestampString = "418474394.146571"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "+getTeamsForDivision:year:callback:"
-            landmarkType = "5">
+            startingLineNumber = "78"
+            endingLineNumber = "78">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -102,13 +102,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fotboll/FOTDataManager.m"
-            timestampString = "418286739.44587"
+            timestampString = "418474394.146571"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "+getTeamsForDivision:year:callback:"
-            landmarkType = "5">
+            startingLineNumber = "78"
+            endingLineNumber = "78">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
