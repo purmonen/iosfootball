@@ -11,12 +11,13 @@
 @interface FOTTeam : NSObject
 
 @property NSString *name;
+@property NSString *normalizedName;
 @property NSInteger gamesPlayed;
 @property NSInteger wins;
 @property NSInteger losses;
 @property NSInteger ties;
-@property NSInteger goalsPlus;
-@property NSInteger goalsMinus;
+@property NSInteger goalPlus;
+@property NSInteger goalMinus;
 @property NSInteger goalDifference;
 @property NSInteger points;
 @property NSString *id;

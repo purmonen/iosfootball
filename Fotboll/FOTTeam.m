@@ -13,12 +13,13 @@
 + (FOTTeam *)fromJson:(id)json {
     FOTTeam *team = [[FOTTeam alloc] init];
     team.name = (NSString *)[json objectForKey:@"name"];
+    team.normalizedName = (NSString *)[json objectForKey:@"normalizedName"];
     team.gamesPlayed = [[json objectForKey:@"gamesPlayed"] integerValue];
     team.wins = [[json objectForKey:@"wins"] integerValue];
     team.losses = [[json objectForKey:@"losses"] integerValue];
     team.ties = [[json objectForKey:@"ties"] integerValue];
-    team.goalsPlus = [[json objectForKey:@"goalsPlus"] integerValue];
-    team.goalsMinus = [[json objectForKey:@"goalsMinus"] integerValue];
+    team.goalPlus = [[json objectForKey:@"goalPlus"] integerValue];
+    team.goalMinus = [[json objectForKey:@"goalMinus"] integerValue];
     team.goalDifference = [[json objectForKey:@"goalDifference"] integerValue];
     team.points = [[json objectForKey:@"points"] integerValue];
     team.id = (NSString *)[json objectForKey:@"id"];
@@ -27,12 +28,13 @@
 
 - (id)toJson {
     NSDictionary *json = @{@"name": self.name,
+                           @"normalizedName": self.normalizedName,
                            @"gamesPlayed": [NSNumber numberWithInteger:self.gamesPlayed],
                            @"wins": [NSNumber numberWithInteger:self.wins],
                            @"losses": [NSNumber numberWithInteger:self.losses],
                            @"ties": [NSNumber numberWithInteger:self.ties],
-                           @"goalsPlus": [NSNumber numberWithInteger:self.goalsPlus],
-                           @"goalsMinus": [NSNumber numberWithInteger:self.goalsMinus],
+                           @"goalPlus": [NSNumber numberWithInteger:self.goalPlus],
+                           @"goalMinus": [NSNumber numberWithInteger:self.goalMinus],
                            @"goalDifference": [NSNumber numberWithInteger:self.goalDifference],
                            @"points": [NSNumber numberWithInteger:self.points],
                            @"id": self.id};

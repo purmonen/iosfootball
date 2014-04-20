@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FOTTableController.h"
+#import "FOTDataManager.h"
+#import "FOTTeamCell.h"
 
-@interface FOTDisplayTableController : UIViewController
+@interface FOTDisplayTableController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property NSInteger year;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property NSInteger selectedIndex;
 
 @end

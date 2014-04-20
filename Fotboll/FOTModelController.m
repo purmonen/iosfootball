@@ -47,34 +47,39 @@
 
 */
 
-- (FOTDisplayTableController *)viewControllerForYear:(NSUInteger)year storyboard:(UIStoryboard *)storyboard
+- (FOTDisplayTableController *)viewControllerForYear:(NSUInteger)year index:(NSInteger)index storyboard:(UIStoryboard *)storyboard
 {
     // Create a new view controller and pass suitable data.
     FOTDisplayTableController *controller = [storyboard instantiateViewControllerWithIdentifier:@"FOTDisplayTableController"];
+    controller.selectedIndex = index;
     controller.year = year;
     return controller;
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    NSUInteger year = ((FOTDisplayTableController *)viewController).year;
+    FOTDisplayTableController *controller = (FOTDisplayTableController *)viewController;
+    NSUInteger year = controller.year;
+    NSInteger index = controller.selectedIndex;
+    [controller.segmentedControl sendActionsForControlEvents:UIControlEventValueChanged];
     if (year <= 2001) {
         return nil;
     }
     
     year--;
-    return [self viewControllerForYear:year storyboard:viewController.storyboard];
+    return [self viewControllerForYear:year index:index storyboard:viewController.storyboard];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSUInteger year = ((FOTDisplayTableController *)viewController).year;
+    FOTDisplayTableController *controller = (FOTDisplayTableController *)viewController;
+    NSUInteger year = controller.year;
+    NSInteger index = controller.selectedIndex;
     if (year >= 2014) {
         return nil;
     }
-    
     year++;
-    return [self viewControllerForYear:year storyboard:viewController.storyboard];
+    return [self viewControllerForYear:year index:index storyboard:viewController.storyboard];
 }
 
 @end

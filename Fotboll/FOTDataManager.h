@@ -12,6 +12,9 @@
 
 @interface FOTDataManager : NSObject
 
-+ (void)loadTeamsForDivision:(NSString *)division year:(NSInteger)year update:(BOOL)update callback:(void(^)(NSArray *))callback;
+- (void)loadTeamsForDivision:(NSString *)division year:(NSInteger)year update:(BOOL)update callback:(void(^)(NSArray *))callback;
+
+- (void)loadForum:(NSString *)team callback:(void(^)(NSArray *))callback;
++ (FOTDataManager *)instance;
 
 @end

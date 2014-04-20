@@ -11,6 +11,6 @@
 
 @interface FOTModelController : UIViewController<UIPageViewControllerDataSource>
 
-- (FOTDisplayTableController *)viewControllerForYear:(NSUInteger)year storyboard:(UIStoryboard *)storyboard;
+- (FOTDisplayTableController *)viewControllerForYear:(NSUInteger)year index:(NSInteger)index storyboard:(UIStoryboard *)storyboard;
 
 @end

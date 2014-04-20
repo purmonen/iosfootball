@@ -12,5 +12,6 @@
 
 + (void)getAsyncJson:(NSString *)urlString completionHandler:(void (^)(id))completionHandler;
 + (void)postAsyncJson:(NSString *)urlString data:(NSData *)data completionHandler:(void (^)(id))completionHandler;
++ (void)getAsyncData:( NSString *)urlString completionHandler:(void (^)(NSData *))completionHandler;
 
 @end

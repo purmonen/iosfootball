@@ -23,6 +23,7 @@
     if (data != nil) {
         [request setHTTPMethod:@"POST"];
         [request setHTTPBody:data];
+        [request setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
     }
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
 	[NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -34,5 +35,20 @@
         }
     }];
 }
+
++ (void)getAsyncData:( NSString *)urlString completionHandler:(void (^)(NSData *))completionHandler {
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *request =[NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:10];
+    [request setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+	[NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (data == nil) {
+            completionHandler(nil);
+        } else {
+        	completionHandler(data);
+        }
+    }];
+}
+
 
 @end

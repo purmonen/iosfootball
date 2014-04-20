@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		260872F018EEA56300C37628 /* FOTModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 260872EF18EEA56300C37628 /* FOTModelController.m */; };
 		260872F318EEA58200C37628 /* FOTRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 260872F218EEA58200C37628 /* FOTRootViewController.m */; };
+		2663730F1904055200C79E9A /* FOTGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 2663730E1904055200C79E9A /* FOTGame.m */; };
+		2663731219040A3800C79E9A /* FOTLiveScoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2663731119040A3800C79E9A /* FOTLiveScoreManager.m */; };
+		2663731519042A0F00C79E9A /* FOTGameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2663731419042A0E00C79E9A /* FOTGameCell.m */; };
+		266373181904368C00C79E9A /* FOTForumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 266373171904368C00C79E9A /* FOTForumManager.m */; };
 		267B457718EC78780046D1AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267B457618EC78780046D1AA /* Foundation.framework */; };
 		267B457918EC78780046D1AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267B457818EC78780046D1AA /* CoreGraphics.framework */; };
 		267B457B18EC78780046D1AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267B457A18EC78780046D1AA /* UIKit.framework */; };
@@ -16,7 +20,6 @@
 		267B458318EC78780046D1AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B458218EC78780046D1AA /* main.m */; };
 		267B458718EC78780046D1AA /* FOTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B458618EC78780046D1AA /* FOTAppDelegate.m */; };
 		267B458A18EC78780046D1AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 267B458818EC78780046D1AA /* Main.storyboard */; };
-		267B458D18EC78780046D1AA /* FOTTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B458C18EC78780046D1AA /* FOTTableController.m */; };
 		267B458F18EC78780046D1AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 267B458E18EC78780046D1AA /* Images.xcassets */; };
 		267B459618EC78790046D1AA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267B459518EC78790046D1AA /* XCTest.framework */; };
 		267B459718EC78790046D1AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267B457618EC78780046D1AA /* Foundation.framework */; };
@@ -28,6 +31,8 @@
 		267B45B418EC791A0046D1AA /* FOTTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B45B318EC791A0046D1AA /* FOTTeam.m */; };
 		26A40A5A18EC849C0000A517 /* FOTTeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A40A5918EC849C0000A517 /* FOTTeamCell.m */; };
 		26A40ADD18ECD1AB0000A517 /* FOTDisplayTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A40ADC18ECD1AB0000A517 /* FOTDisplayTableController.m */; };
+		26DCE67118FBE5C8000FAFA9 /* FOTLiveScoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DCE67018FBE5C8000FAFA9 /* FOTLiveScoreController.m */; };
+		26FFECDD18FB53FB00AEAF5A /* FOTForumController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FFECDC18FB53FB00AEAF5A /* FOTForumController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,14 @@
 		260872EF18EEA56300C37628 /* FOTModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTModelController.m; sourceTree = "<group>"; };
 		260872F118EEA58200C37628 /* FOTRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTRootViewController.h; sourceTree = "<group>"; };
 		260872F218EEA58200C37628 /* FOTRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTRootViewController.m; sourceTree = "<group>"; };
+		2663730D1904055200C79E9A /* FOTGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTGame.h; sourceTree = "<group>"; };
+		2663730E1904055200C79E9A /* FOTGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTGame.m; sourceTree = "<group>"; };
+		2663731019040A3800C79E9A /* FOTLiveScoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTLiveScoreManager.h; sourceTree = "<group>"; };
+		2663731119040A3800C79E9A /* FOTLiveScoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTLiveScoreManager.m; sourceTree = "<group>"; };
+		2663731319042A0E00C79E9A /* FOTGameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTGameCell.h; sourceTree = "<group>"; };
+		2663731419042A0E00C79E9A /* FOTGameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTGameCell.m; sourceTree = "<group>"; };
+		266373161904368C00C79E9A /* FOTForumManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTForumManager.h; sourceTree = "<group>"; };
+		266373171904368C00C79E9A /* FOTForumManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTForumManager.m; sourceTree = "<group>"; };
 		267B457318EC78780046D1AA /* Fotboll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fotboll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		267B457618EC78780046D1AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		267B457818EC78780046D1AA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,8 +69,6 @@
 		267B458518EC78780046D1AA /* FOTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOTAppDelegate.h; sourceTree = "<group>"; };
 		267B458618EC78780046D1AA /* FOTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FOTAppDelegate.m; sourceTree = "<group>"; };
 		267B458918EC78780046D1AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		267B458B18EC78780046D1AA /* FOTTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOTTableController.h; sourceTree = "<group>"; };
-		267B458C18EC78780046D1AA /* FOTTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FOTTableController.m; sourceTree = "<group>"; };
 		267B458E18EC78780046D1AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		267B459418EC78790046D1AA /* FotbollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FotbollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		267B459518EC78790046D1AA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -74,6 +85,10 @@
 		26A40A5918EC849C0000A517 /* FOTTeamCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTTeamCell.m; sourceTree = "<group>"; };
 		26A40ADB18ECD1AB0000A517 /* FOTDisplayTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTDisplayTableController.h; sourceTree = "<group>"; };
 		26A40ADC18ECD1AB0000A517 /* FOTDisplayTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTDisplayTableController.m; sourceTree = "<group>"; };
+		26DCE66F18FBE5C8000FAFA9 /* FOTLiveScoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTLiveScoreController.h; sourceTree = "<group>"; };
+		26DCE67018FBE5C8000FAFA9 /* FOTLiveScoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTLiveScoreController.m; sourceTree = "<group>"; };
+		26FFECDB18FB53FB00AEAF5A /* FOTForumController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FOTForumController.h; path = ../FOTForumController.h; sourceTree = "<group>"; };
+		26FFECDC18FB53FB00AEAF5A /* FOTForumController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FOTForumController.m; path = ../FOTForumController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,10 +148,16 @@
 		267B457C18EC78780046D1AA /* Fotboll */ = {
 			isa = PBXGroup;
 			children = (
+				26FFECDB18FB53FB00AEAF5A /* FOTForumController.h */,
+				26FFECDC18FB53FB00AEAF5A /* FOTForumController.m */,
 				267B458518EC78780046D1AA /* FOTAppDelegate.h */,
 				267B458618EC78780046D1AA /* FOTAppDelegate.m */,
+				26DCE66F18FBE5C8000FAFA9 /* FOTLiveScoreController.h */,
+				26DCE67018FBE5C8000FAFA9 /* FOTLiveScoreController.m */,
 				26A40A5818EC849C0000A517 /* FOTTeamCell.h */,
 				26A40A5918EC849C0000A517 /* FOTTeamCell.m */,
+				2663731319042A0E00C79E9A /* FOTGameCell.h */,
+				2663731419042A0E00C79E9A /* FOTGameCell.m */,
 				267B458818EC78780046D1AA /* Main.storyboard */,
 				26A40ADB18ECD1AB0000A517 /* FOTDisplayTableController.h */,
 				26A40ADC18ECD1AB0000A517 /* FOTDisplayTableController.m */,
@@ -144,12 +165,16 @@
 				260872EF18EEA56300C37628 /* FOTModelController.m */,
 				260872F118EEA58200C37628 /* FOTRootViewController.h */,
 				260872F218EEA58200C37628 /* FOTRootViewController.m */,
-				267B458B18EC78780046D1AA /* FOTTableController.h */,
-				267B458C18EC78780046D1AA /* FOTTableController.m */,
 				267B45AF18EC79060046D1AA /* FOTDataManager.h */,
 				267B45B018EC79060046D1AA /* FOTDataManager.m */,
+				2663731019040A3800C79E9A /* FOTLiveScoreManager.h */,
+				2663731119040A3800C79E9A /* FOTLiveScoreManager.m */,
+				266373161904368C00C79E9A /* FOTForumManager.h */,
+				266373171904368C00C79E9A /* FOTForumManager.m */,
 				267B45B218EC791A0046D1AA /* FOTTeam.h */,
 				267B45B318EC791A0046D1AA /* FOTTeam.m */,
+				2663730D1904055200C79E9A /* FOTGame.h */,
+				2663730E1904055200C79E9A /* FOTGame.m */,
 				267B45AB18EC78A00046D1AA /* Backend */,
 				267B458E18EC78780046D1AA /* Images.xcassets */,
 				267B457D18EC78780046D1AA /* Supporting Files */,
@@ -294,15 +319,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				267B45AE18EC78D90046D1AA /* MSLHttp.m in Sources */,
+				2663731219040A3800C79E9A /* FOTLiveScoreManager.m in Sources */,
+				26FFECDD18FB53FB00AEAF5A /* FOTForumController.m in Sources */,
 				26A40ADD18ECD1AB0000A517 /* FOTDisplayTableController.m in Sources */,
 				260872F318EEA58200C37628 /* FOTRootViewController.m in Sources */,
+				26DCE67118FBE5C8000FAFA9 /* FOTLiveScoreController.m in Sources */,
 				267B458718EC78780046D1AA /* FOTAppDelegate.m in Sources */,
 				260872F018EEA56300C37628 /* FOTModelController.m in Sources */,
 				267B45B118EC79060046D1AA /* FOTDataManager.m in Sources */,
+				266373181904368C00C79E9A /* FOTForumManager.m in Sources */,
+				2663731519042A0F00C79E9A /* FOTGameCell.m in Sources */,
 				267B45B418EC791A0046D1AA /* FOTTeam.m in Sources */,
 				267B458318EC78780046D1AA /* main.m in Sources */,
 				26A40A5A18EC849C0000A517 /* FOTTeamCell.m in Sources */,
-				267B458D18EC78780046D1AA /* FOTTableController.m in Sources */,
+				2663730F1904055200C79E9A /* FOTGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

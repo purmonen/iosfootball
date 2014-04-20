@@ -28,7 +28,7 @@
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageViewController.delegate = self;
     
-    FOTDisplayTableController *startingViewController = [self.modelController viewControllerForYear:2014 storyboard:self.storyboard];
+    FOTDisplayTableController *startingViewController = [self.modelController viewControllerForYear:2014 index:0 storyboard:self.storyboard];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
