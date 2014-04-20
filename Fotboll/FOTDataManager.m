@@ -72,10 +72,18 @@ static FOTDataManager *instance = nil;
 - (void)loadForum:(NSString *)team callback:(void(^)(NSArray *))callback {
     NSString *url = [NSString stringWithFormat:@"http://%@:%@/forum/%@", HOST, PORT, team];
     [MSLHttp getAsyncJson:url completionHandler:^(NSArray *json) {
+        NSLog(@"%@", json);
         if (!json) {
             return;
         }
-        callback(json);
+        NSMutableArray *forum = [[NSMutableArray alloc] init];
+        for (NSDictionary *dict in json) {
+            FOTForumPost *post = [[FOTForumPost alloc] init];
+            post.name = [dict objectForKey:@"name"];
+            post.content = [dict objectForKey:@"content"];
+            [forum addObject:post];
+        }
+        callback(forum);
     }];
 }
 

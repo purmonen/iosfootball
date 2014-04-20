@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FOTDataManager.h"
 #import "FOTTeamCell.h"
+#import "FOTForumTableController.h"
 
 @interface FOTDisplayTableController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 

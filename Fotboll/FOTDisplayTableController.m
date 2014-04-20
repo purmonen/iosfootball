@@ -76,7 +76,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    FOTForumController *dv = (FOTForumController *)[segue destinationViewController];
+    FOTForumTableController *dv = (FOTForumTableController *)[segue destinationViewController];
     dv.team = (FOTTeam *)[self.teams objectAtIndex:[self.tableView indexPathForSelectedRow].row];
 }
 

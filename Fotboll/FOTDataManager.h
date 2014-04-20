@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MSLHttp.h"
 #import "FOTTeam.h"
+#import "FOTForumPost.h"
 
 @interface FOTDataManager : NSObject
 
