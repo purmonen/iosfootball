@@ -31,18 +31,36 @@ static NSString *cellIdentifier = @"forumCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[FOTDataManager instance] loadForum:self.team.normalizedName callback:^(NSArray *forum) {
-        self.forum = forum;
-        NSLog(@"Forum length: %ld", forum.count);
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [self.tableView reloadData];
-        }];
-    }];
+
+//    self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(64, 0, 0, 0);
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    self.navigationController.navigationBar.translucent = NO;
+    [[FOTDataManager instance] loadForum:self.team.normalizedName callback:^(NSArray *forum) {
+        self.forum = forum;
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.tableView reloadData];
+        }];
+    }];
+    [self setImage];
+}
+
+- (void)setImage {
+    UIImage *image = [UIImage imageNamed:self.team.normalizedName];
+    CGSize newSize = CGSizeMake(768, 70);
+    CGSize backgroundSize = CGSizeMake(130, 45);
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(170, 10, backgroundSize.width, backgroundSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    [self.navigationController.navigationBar setBackgroundImage:newImage forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,6 +97,7 @@ static NSString *cellIdentifier = @"forumCell";
     cell.nameLabel.text = post.name;
     cell.contentLabel.text = post.content;
     cell.contentLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    cell.dateLabel.text = post.date;
 
 }
 

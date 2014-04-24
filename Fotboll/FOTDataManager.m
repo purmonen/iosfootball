@@ -11,7 +11,8 @@
 
 //#define HOST @"192.168.1.86"
 //#define HOST @"localhost"
-#define HOST @"54.203.255.93"
+// #define HOST @"54.203.255.93" // Micro instance
+#define HOST @"54.72.222.76" // Medium instance
 #define PORT @"8000"
 
 @interface FOTDataManager ()
@@ -72,7 +73,6 @@ static FOTDataManager *instance = nil;
 - (void)loadForum:(NSString *)team callback:(void(^)(NSArray *))callback {
     NSString *url = [NSString stringWithFormat:@"http://%@:%@/forum/%@", HOST, PORT, team];
     [MSLHttp getAsyncJson:url completionHandler:^(NSArray *json) {
-        NSLog(@"%@", json);
         if (!json) {
             return;
         }
@@ -81,6 +81,7 @@ static FOTDataManager *instance = nil;
             FOTForumPost *post = [[FOTForumPost alloc] init];
             post.name = [dict objectForKey:@"name"];
             post.content = [dict objectForKey:@"content"];
+            post.date = [dict objectForKey:@"date"];
             [forum addObject:post];
         }
         callback(forum);

@@ -11,7 +11,7 @@
 @interface FOTForumPost : NSObject
 
 @property NSString *name;
-@property NSString *time;
 @property NSString *content;
+@property NSString *date;
 
 @end

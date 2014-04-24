@@ -7,14 +7,14 @@
 //
 
 #import "FOTDisplayTableController.h"
-#import "FOTForumController.h"
 
 @interface FOTDisplayTableController ()
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (weak, nonatomic) IBOutlet UILabel *yearLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *teams;
+@property (weak, nonatomic) IBOutlet UIButton *previousYearButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextYearButton;
 
 @end
 
@@ -31,21 +31,44 @@
 
 - (void)viewDidLoad
 {
-    //self.year = 2014;
+
+    self.year = 2014;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     NSLog(@"%ld", (long)[self.childViewControllers count]);
     [self.segmentedControl addTarget:self action:@selector(changeTable) forControlEvents:UIControlEventValueChanged];
     self.segmentedControl.selectedSegmentIndex = self.selectedIndex;
     [super viewDidLoad];
-    [self changeTable];
+    [self configureYearButtons];
     self.activityIndicator.hidesWhenStopped = YES;
     // Do any additional setup after loading the view.
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    self.navigationController.navigationBar.translucent = YES;
     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+
 }
+
+
+- (void)configureYearButtons {
+    [self.previousYearButton setTitle:[NSString stringWithFormat:@"%ld", self.year-1] forState:UIControlStateNormal];
+    [self.nextYearButton setTitle:[NSString stringWithFormat:@"%ld", self.year+1] forState:UIControlStateNormal];
+    self.previousYearButton.hidden = self.year == 2001;
+    self.nextYearButton.hidden = self.year == 2014;
+    [self setTable:NO];
+}
+
+- (IBAction)previousYearButtonClicked:(UIButton *)sender {
+    self.year--;
+    [self configureYearButtons];
+}
+
+- (IBAction)nextYearButtonClicked:(UIButton *)sender {
+    self.year++;
+    [self configureYearButtons];
+}
+
 
 - (NSString *)getDivision {
     return self.segmentedControl.selectedSegmentIndex ? @"superettan" : @"allsvenskan";
@@ -63,7 +86,7 @@
 }
 
 - (void)setTable:(BOOL)update {
-    self.yearLabel.text = [NSString stringWithFormat:@"%ld", (long)self.year];
+    [self setTitle:[NSString stringWithFormat:@"Tabell %ld", (long)self.year]];
     [self.activityIndicator startAnimating];
 
     [[FOTDataManager instance] loadTeamsForDivision:[self getDivision] year:self.year update:update callback:^(NSArray *teams) {
@@ -76,8 +99,10 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    FOTForumTableController *dv = (FOTForumTableController *)[segue destinationViewController];
-    dv.team = (FOTTeam *)[self.teams objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+    if ([[segue destinationViewController] isKindOfClass:[FOTForumTableController class]]) {
+        FOTForumTableController *dv = (FOTForumTableController *)[segue destinationViewController];
+        dv.team = (FOTTeam *)[self.teams objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

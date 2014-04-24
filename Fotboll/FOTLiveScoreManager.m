@@ -15,6 +15,7 @@
 @property NSTimer *updateTimer;
 @property BOOL isRunning;
 @property NSXMLParser *xmlParser;
+@property NSString *division;
 
 @end
 
@@ -47,9 +48,11 @@ static FOTLiveScoreManager *instance;
     NSLog(@"LOADING SCORE");
     if (self.xmlParser) return;
     NSString *url = @"http://svenskfotboll.se/xml.ashx?f=current_games.xml";
-    self.xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:url]];
-    self.xmlParser.delegate = self;
-    [self.xmlParser parse];
+    [MSLHttp getAsyncData:url completionHandler:^(NSData *data){
+        self.xmlParser = [[NSXMLParser alloc] initWithData:data];
+        self.xmlParser.delegate = self;
+        [self.xmlParser parse];
+    }];
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
@@ -57,14 +60,23 @@ static FOTLiveScoreManager *instance;
     NSLog(@"STARTED XML\n");
 }
 
+- (BOOL)divisionAllowed {
+    return [self.division isEqualToString:@"Allsvenskan"] || [self.division isEqualToString:@"Superettan"];
+}
+
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     
+    if ([elementName isEqualToString:@"tournament"]) {
+        self.division = [attributeDict objectForKey:@"name"];
+    }
+    if (![self divisionAllowed]) return;
     if ([elementName isEqualToString:@"team"]) {
         [self.teams addObject:attributeDict];
     }
     if ([elementName isEqualToString:@"game"]) {
         [self.teamGames addObject:attributeDict];
     }
+
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
