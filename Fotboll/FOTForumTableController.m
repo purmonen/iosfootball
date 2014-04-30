@@ -31,7 +31,7 @@ static NSString *cellIdentifier = @"forumCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    NSLog(@"Did load");
 //    self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(64, 0, 0, 0);
 
     // Uncomment the following line to preserve selection between presentations.
@@ -39,9 +39,6 @@ static NSString *cellIdentifier = @"forumCell";
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)viewDidAppear:(BOOL)animated {
     self.navigationController.navigationBar.translucent = NO;
     [[FOTDataManager instance] loadForum:self.team.normalizedName callback:^(NSArray *forum) {
         self.forum = forum;
@@ -50,6 +47,11 @@ static NSString *cellIdentifier = @"forumCell";
         }];
     }];
     [self setImage];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"Will appear");
+
 }
 
 - (void)setImage {

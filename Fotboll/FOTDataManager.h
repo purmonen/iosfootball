@@ -10,12 +10,15 @@
 #import "MSLHttp.h"
 #import "FOTTeam.h"
 #import "FOTForumPost.h"
+#import "FOTGame.h"
 
 @interface FOTDataManager : NSObject
 
 - (void)loadTeamsForDivision:(NSString *)division year:(NSInteger)year update:(BOOL)update callback:(void(^)(NSArray *))callback;
 
 - (void)loadForum:(NSString *)team callback:(void(^)(NSArray *))callback;
+
+- (void)loadLiveScore:(void(^)(NSArray *))callback;
 + (FOTDataManager *)instance;
 
 @end

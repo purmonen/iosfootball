@@ -12,6 +12,7 @@
 
 @property NSString *name;
 @property NSString *normalizedName;
+@property NSString *shortName;
 @property NSInteger gamesPlayed;
 @property NSInteger wins;
 @property NSInteger losses;

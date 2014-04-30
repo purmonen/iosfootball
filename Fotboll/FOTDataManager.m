@@ -9,10 +9,10 @@
 #import "FOTDataManager.h"
 
 
-//#define HOST @"192.168.1.86"
+#define HOST @"192.168.1.86"
 //#define HOST @"localhost"
 // #define HOST @"54.203.255.93" // Micro instance
-#define HOST @"54.72.222.76" // Medium instance
+//define HOST @"54.72.222.76" // Medium instance
 #define PORT @"8000"
 
 @interface FOTDataManager ()
@@ -61,7 +61,7 @@ static FOTDataManager *instance = nil;
 }
 
 - (void)getTeamsForDivision:(NSString *)division year:(NSInteger)year callback:(void(^)(NSArray *))callback {
-    NSString *url = [NSString stringWithFormat:@"http://%@:%@/table/%@/%ld/update", HOST, PORT, division, (long)year];
+    NSString *url = [NSString stringWithFormat:@"http://%@:%@/table/%@/%ld", HOST, PORT, division, (long)year];
     [MSLHttp getAsyncJson:url completionHandler:^(NSArray *json) {
         if (!json) {
             return;
@@ -86,6 +86,30 @@ static FOTDataManager *instance = nil;
         }
         callback(forum);
     }];
+}
+
+- (void)loadLiveScore:(void(^)(NSArray *))callback {
+    [MSLHttp getAsyncJson:[NSString stringWithFormat:@"http://%@:%@/liveScore", HOST, PORT] completionHandler:^(NSArray *json) {
+        NSMutableArray *games = [[NSMutableArray alloc] init];
+        for (NSDictionary *jsonGame in json) {
+            FOTGame *game = [[FOTGame alloc] init];
+            game.status = [jsonGame objectForKey:@"status"];
+            game.startTime = [[jsonGame objectForKey:@"startTime"] substringToIndex:5];
+            
+            NSDictionary *homeTeam = [jsonGame objectForKey:@"homeTeam"];
+            NSDictionary *awayTeam = [jsonGame objectForKey:@"awayTeam"];
+            
+            game.homeTeam = [homeTeam objectForKey:@"name"];
+            game.awayTeam = [awayTeam objectForKey:@"name"];
+
+            game.homeScore = [homeTeam objectForKey:@"score"];
+            game.awayScore = [awayTeam objectForKey:@"score"];
+            [games addObject:game];
+        }
+        NSLog(@"Games: %@", games);
+        callback(games);
+    }];
+
 }
 
 @end

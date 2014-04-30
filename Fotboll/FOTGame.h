@@ -18,6 +18,8 @@
 @property NSNumber *awayScore;
 
 @property NSString *scheduleTime;
+@property NSString *startTime;
+
 @property NSString *status;
 
 

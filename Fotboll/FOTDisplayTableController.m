@@ -20,6 +20,7 @@
 
 @implementation FOTDisplayTableController
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -31,7 +32,6 @@
 
 - (void)viewDidLoad
 {
-
     self.year = 2014;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -44,7 +44,8 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
     self.navigationController.navigationBar.translucent = YES;
     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
 
@@ -106,13 +107,33 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     FOTTeamCell *cell = [tableView dequeueReusableCellWithIdentifier:@"teamCell"];
     FOTTeam *team = [self.teams objectAtIndex:indexPath.row];
-    cell.nameLabel.text = [NSString stringWithFormat:@"%ld. %@", (long)indexPath.row + 1, team.name];
+    if ([self.teams indexOfObject:team] == 13) {
+        NSLog(@"YEP GREY!");
+        cell.backgroundColor = [UIColor colorWithWhite:0.97 alpha:1];
+    } else {
+        cell.backgroundColor = [UIColor clearColor];
+    }
+    cell.nameLabel.text = [NSString stringWithFormat:@"%ld. %@", (long)indexPath.row + 1, team.shortName];
     cell.gamesPlayedLabel.text = [NSString stringWithFormat:@"%ld", (long)team.gamesPlayed];
     cell.goalDifference.text = [NSString stringWithFormat:@"%ld", (long)team.goalDifference];
     cell.pointsLabel.text = [NSString stringWithFormat:@"%ld", (long)team.points];
     cell.teamImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", team.normalizedName]];
+    /*
+    FOTImageTeamCell *cell = [tableView dequeueReusableCellWithIdentifier:@"teamCell"];
+    FOTTeam *team = [self.teams objectAtIndex:indexPath.row];
+    
+    cell.gamesPlayedLabel.text = [NSString stringWithFormat:@"%ld", (long)team.gamesPlayed];
+    cell.winsLabel.text = [NSString stringWithFormat:@"%ld", (long)team.wins];
+    cell.tiesLabel.text = [NSString stringWithFormat:@"%ld", (long)team.ties];
+    cell.lossesLabel.text = [NSString stringWithFormat:@"%ld", (long)team.losses];
+
+    cell.goalDifference.text = [NSString stringWithFormat:@"%ld", (long)team.goalDifference];
+    cell.pointsLabel.text = [NSString stringWithFormat:@"%ld", (long)team.points];
+    cell.teamImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", team.normalizedName]];
+     */
     return cell;
 }
 

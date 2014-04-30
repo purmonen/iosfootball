@@ -28,8 +28,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[FOTDataManager instance] loadLiveScore:^(NSArray *games) {
+        self.games = games;
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.tableView reloadData];
+        }];
+    }];
 }
 
+/*
 - (void)viewDidDisappear:(BOOL)animated {
     [[FOTLiveScoreManager instance] removeObserver:self forKeyPath:@"games" context:nil];
     [[FOTLiveScoreManager instance] stop];
@@ -39,6 +46,7 @@
     [[FOTLiveScoreManager instance] addObserver:self forKeyPath:@"games" options:0 context:nil];
     [[FOTLiveScoreManager instance] start];
 }
+ */
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     NSLog(@"Changing text view\n");
@@ -65,7 +73,7 @@
     cell.awayTeamScore.text = [NSString stringWithFormat:@"%@", game.awayScore];
     cell.homeTeamImage.image = [UIImage imageNamed:[self normalizeTeamName:game.homeTeam]];
     cell.awayTeamImage.image = [UIImage imageNamed:[self normalizeTeamName:game.awayTeam]];
-    cell.statusLabel.text = [NSString stringWithFormat:@"%@", game.scheduleTime];
+    cell.statusLabel.text = [NSString stringWithFormat:@"%@, %@", game.startTime, game.status];
 
     //cell.textLabel.font = [UIFont fontWithName:@"verdana" size:10];
     return cell;
