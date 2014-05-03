@@ -36,26 +36,18 @@
     }];
 }
 
-/*
+
 - (void)viewDidDisappear:(BOOL)animated {
-    [[FOTLiveScoreManager instance] removeObserver:self forKeyPath:@"games" context:nil];
-    [[FOTLiveScoreManager instance] stop];
+    [[FOTDataManager instance] removeObserver:self forKeyPath:@"liveScore" context:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [[FOTLiveScoreManager instance] addObserver:self forKeyPath:@"games" options:0 context:nil];
-    [[FOTLiveScoreManager instance] start];
+    [[FOTDataManager instance] addObserver:self forKeyPath:@"liveScore" options:0 context:nil];
 }
- */
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    NSLog(@"Changing text view\n");
-    if (object == [FOTLiveScoreManager instance]) {
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            self.games = [FOTLiveScoreManager instance].games;
-            [self.tableView reloadData];
-        }];
-    }
+    self.games = [FOTDataManager instance].liveScore;
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,11 +61,11 @@
     FOTGame *game = [self.games objectAtIndex:indexPath.row];
     cell.homeTeamLabel.text = game.homeTeam;
     cell.awayTeamLabel.text = game.awayTeam;
-    cell.homeTeamScore.text = [NSString stringWithFormat:@"%@", game.homeScore];
-    cell.awayTeamScore.text = [NSString stringWithFormat:@"%@", game.awayScore];
+    cell.homeTeamScore.text = game.homeScore;
+    cell.awayTeamScore.text = game.awayScore;
     cell.homeTeamImage.image = [UIImage imageNamed:[self normalizeTeamName:game.homeTeam]];
     cell.awayTeamImage.image = [UIImage imageNamed:[self normalizeTeamName:game.awayTeam]];
-    cell.statusLabel.text = [NSString stringWithFormat:@"%@, %@", game.startTime, game.status];
+    cell.statusLabel.text = [NSString stringWithFormat:@"%@, %@", game.date, game.status];
 
     //cell.textLabel.font = [UIFont fontWithName:@"verdana" size:10];
     return cell;

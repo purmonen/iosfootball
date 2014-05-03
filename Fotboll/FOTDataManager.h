@@ -20,5 +20,8 @@
 
 - (void)loadLiveScore:(void(^)(NSArray *))callback;
 + (FOTDataManager *)instance;
+- (void)registerDevice:(NSData *)deviceId;
+
+@property NSArray *liveScore;
 
 @end

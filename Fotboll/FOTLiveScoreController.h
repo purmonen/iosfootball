@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FOTLiveScoreManager.h"
 #import "FOTDataManager.h"
 #import "FOTGame.h"
 #import "FOTGameCell.h"

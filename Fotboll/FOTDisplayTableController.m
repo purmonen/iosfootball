@@ -15,6 +15,9 @@
 @property NSArray *teams;
 @property (weak, nonatomic) IBOutlet UIButton *previousYearButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextYearButton;
+@property (weak, nonatomic) IBOutlet UILabel *currentTableLabel;
+
+@property NSInteger currentYear;
 
 @end
 
@@ -32,6 +35,10 @@
 
 - (void)viewDidLoad
 {
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [gregorian components:NSYearCalendarUnit fromDate:[NSDate date]];
+    self.currentYear = [components year];
+    
     self.year = 2014;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -48,15 +55,14 @@
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
     self.navigationController.navigationBar.translucent = YES;
     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-
 }
-
 
 - (void)configureYearButtons {
     [self.previousYearButton setTitle:[NSString stringWithFormat:@"%ld", self.year-1] forState:UIControlStateNormal];
     [self.nextYearButton setTitle:[NSString stringWithFormat:@"%ld", self.year+1] forState:UIControlStateNormal];
     self.previousYearButton.hidden = self.year == 2001;
     self.nextYearButton.hidden = self.year == 2014;
+    self.currentTableLabel.text = [NSString stringWithFormat:@"Tabell %ld", self.year];
     [self setTable:NO];
 }
 
@@ -89,6 +95,9 @@
 - (void)setTable:(BOOL)update {
     [self setTitle:[NSString stringWithFormat:@"Tabell %ld", (long)self.year]];
     [self.activityIndicator startAnimating];
+    if (self.year == self.currentYear) {
+        update = YES;
+    }
 
     [[FOTDataManager instance] loadTeamsForDivision:[self getDivision] year:self.year update:update callback:^(NSArray *teams) {
         self.teams = teams;
@@ -110,30 +119,20 @@
     
     FOTTeamCell *cell = [tableView dequeueReusableCellWithIdentifier:@"teamCell"];
     FOTTeam *team = [self.teams objectAtIndex:indexPath.row];
-    if ([self.teams indexOfObject:team] == 13) {
-        NSLog(@"YEP GREY!");
-        cell.backgroundColor = [UIColor colorWithWhite:0.97 alpha:1];
+    
+    UIColor *grey = [UIColor colorWithWhite:0.98 alpha:1];
+    if (indexPath.row == 2 || indexPath.row == 13) {
+        cell.backgroundColor = grey;
     } else {
         cell.backgroundColor = [UIColor clearColor];
+
     }
     cell.nameLabel.text = [NSString stringWithFormat:@"%ld. %@", (long)indexPath.row + 1, team.shortName];
     cell.gamesPlayedLabel.text = [NSString stringWithFormat:@"%ld", (long)team.gamesPlayed];
     cell.goalDifference.text = [NSString stringWithFormat:@"%ld", (long)team.goalDifference];
     cell.pointsLabel.text = [NSString stringWithFormat:@"%ld", (long)team.points];
     cell.teamImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", team.normalizedName]];
-    /*
-    FOTImageTeamCell *cell = [tableView dequeueReusableCellWithIdentifier:@"teamCell"];
-    FOTTeam *team = [self.teams objectAtIndex:indexPath.row];
-    
-    cell.gamesPlayedLabel.text = [NSString stringWithFormat:@"%ld", (long)team.gamesPlayed];
-    cell.winsLabel.text = [NSString stringWithFormat:@"%ld", (long)team.wins];
-    cell.tiesLabel.text = [NSString stringWithFormat:@"%ld", (long)team.ties];
-    cell.lossesLabel.text = [NSString stringWithFormat:@"%ld", (long)team.losses];
 
-    cell.goalDifference.text = [NSString stringWithFormat:@"%ld", (long)team.goalDifference];
-    cell.pointsLabel.text = [NSString stringWithFormat:@"%ld", (long)team.points];
-    cell.teamImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", team.normalizedName]];
-     */
     return cell;
 }
 

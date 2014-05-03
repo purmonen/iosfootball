@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2663730F1904055200C79E9A /* FOTGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 2663730E1904055200C79E9A /* FOTGame.m */; };
-		2663731219040A3800C79E9A /* FOTLiveScoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2663731119040A3800C79E9A /* FOTLiveScoreManager.m */; };
 		2663731519042A0F00C79E9A /* FOTGameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2663731419042A0E00C79E9A /* FOTGameCell.m */; };
 		266373181904368C00C79E9A /* FOTForumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 266373171904368C00C79E9A /* FOTForumManager.m */; };
 		26637323190482BB00C79E9A /* FOTForumTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26637322190482BB00C79E9A /* FOTForumTableController.m */; };
@@ -30,7 +29,6 @@
 		267B45AE18EC78D90046D1AA /* MSLHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B45AD18EC78D90046D1AA /* MSLHttp.m */; };
 		267B45B118EC79060046D1AA /* FOTDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B45B018EC79060046D1AA /* FOTDataManager.m */; };
 		267B45B418EC791A0046D1AA /* FOTTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B45B318EC791A0046D1AA /* FOTTeam.m */; };
-		2696AFCB191088A800C7C7AC /* FOTImageTeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2696AFCA191088A800C7C7AC /* FOTImageTeamCell.m */; };
 		26A40A5A18EC849C0000A517 /* FOTTeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A40A5918EC849C0000A517 /* FOTTeamCell.m */; };
 		26A40ADD18ECD1AB0000A517 /* FOTDisplayTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A40ADC18ECD1AB0000A517 /* FOTDisplayTableController.m */; };
 		26DCE67118FBE5C8000FAFA9 /* FOTLiveScoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DCE67018FBE5C8000FAFA9 /* FOTLiveScoreController.m */; };
@@ -49,8 +47,6 @@
 /* Begin PBXFileReference section */
 		2663730D1904055200C79E9A /* FOTGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTGame.h; sourceTree = "<group>"; };
 		2663730E1904055200C79E9A /* FOTGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTGame.m; sourceTree = "<group>"; };
-		2663731019040A3800C79E9A /* FOTLiveScoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTLiveScoreManager.h; sourceTree = "<group>"; };
-		2663731119040A3800C79E9A /* FOTLiveScoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTLiveScoreManager.m; sourceTree = "<group>"; };
 		2663731319042A0E00C79E9A /* FOTGameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTGameCell.h; sourceTree = "<group>"; };
 		2663731419042A0E00C79E9A /* FOTGameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTGameCell.m; sourceTree = "<group>"; };
 		266373161904368C00C79E9A /* FOTForumManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTForumManager.h; sourceTree = "<group>"; };
@@ -84,8 +80,6 @@
 		267B45B018EC79060046D1AA /* FOTDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTDataManager.m; sourceTree = "<group>"; };
 		267B45B218EC791A0046D1AA /* FOTTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTTeam.h; sourceTree = "<group>"; };
 		267B45B318EC791A0046D1AA /* FOTTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTTeam.m; sourceTree = "<group>"; };
-		2696AFC9191088A800C7C7AC /* FOTImageTeamCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTImageTeamCell.h; sourceTree = "<group>"; };
-		2696AFCA191088A800C7C7AC /* FOTImageTeamCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTImageTeamCell.m; sourceTree = "<group>"; };
 		26A40A5818EC849C0000A517 /* FOTTeamCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTTeamCell.h; sourceTree = "<group>"; };
 		26A40A5918EC849C0000A517 /* FOTTeamCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOTTeamCell.m; sourceTree = "<group>"; };
 		26A40ADB18ECD1AB0000A517 /* FOTDisplayTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOTDisplayTableController.h; sourceTree = "<group>"; };
@@ -159,8 +153,6 @@
 				26DCE67018FBE5C8000FAFA9 /* FOTLiveScoreController.m */,
 				26A40A5818EC849C0000A517 /* FOTTeamCell.h */,
 				26A40A5918EC849C0000A517 /* FOTTeamCell.m */,
-				2696AFC9191088A800C7C7AC /* FOTImageTeamCell.h */,
-				2696AFCA191088A800C7C7AC /* FOTImageTeamCell.m */,
 				2663731319042A0E00C79E9A /* FOTGameCell.h */,
 				2663731419042A0E00C79E9A /* FOTGameCell.m */,
 				2663732719048B0400C79E9A /* FOTForumCell.h */,
@@ -170,8 +162,6 @@
 				26A40ADC18ECD1AB0000A517 /* FOTDisplayTableController.m */,
 				267B45AF18EC79060046D1AA /* FOTDataManager.h */,
 				267B45B018EC79060046D1AA /* FOTDataManager.m */,
-				2663731019040A3800C79E9A /* FOTLiveScoreManager.h */,
-				2663731119040A3800C79E9A /* FOTLiveScoreManager.m */,
 				266373161904368C00C79E9A /* FOTForumManager.h */,
 				266373171904368C00C79E9A /* FOTForumManager.m */,
 				266373241904832200C79E9A /* FOTForumPost.h */,
@@ -273,6 +263,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Sami Purmonen";
 				TargetAttributes = {
+					267B457218EC78780046D1AA = {
+						DevelopmentTeam = U8JUVSFVME;
+					};
 					267B459318EC78790046D1AA = {
 						TestTargetID = 267B457218EC78780046D1AA;
 					};
@@ -323,9 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2696AFCB191088A800C7C7AC /* FOTImageTeamCell.m in Sources */,
 				267B45AE18EC78D90046D1AA /* MSLHttp.m in Sources */,
-				2663731219040A3800C79E9A /* FOTLiveScoreManager.m in Sources */,
 				26637323190482BB00C79E9A /* FOTForumTableController.m in Sources */,
 				26A40ADD18ECD1AB0000A517 /* FOTDisplayTableController.m in Sources */,
 				26DCE67118FBE5C8000FAFA9 /* FOTLiveScoreController.m in Sources */,
@@ -464,10 +455,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Fotboll/Fotboll-Prefix.pch";
 				INFOPLIST_FILE = "Fotboll/Fotboll-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -478,10 +471,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Fotboll/Fotboll-Prefix.pch";
 				INFOPLIST_FILE = "Fotboll/Fotboll-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

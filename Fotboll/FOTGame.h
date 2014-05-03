@@ -14,11 +14,10 @@
 @property NSString *homeTeam;
 @property NSString *awayTeam;
 
-@property NSNumber *homeScore;
-@property NSNumber *awayScore;
+@property NSString *homeScore;
+@property NSString *awayScore;
 
-@property NSString *scheduleTime;
-@property NSString *startTime;
+@property NSString *date;
 
 @property NSString *status;
 

@@ -15,7 +15,10 @@
 //define HOST @"54.72.222.76" // Medium instance
 #define PORT @"8000"
 
+
 @interface FOTDataManager ()
+
+
 
 @end
 
@@ -94,22 +97,35 @@ static FOTDataManager *instance = nil;
         for (NSDictionary *jsonGame in json) {
             FOTGame *game = [[FOTGame alloc] init];
             game.status = [jsonGame objectForKey:@"status"];
-            game.startTime = [[jsonGame objectForKey:@"startTime"] substringToIndex:5];
+            game.date = [jsonGame objectForKey:@"date"];
             
-            NSDictionary *homeTeam = [jsonGame objectForKey:@"homeTeam"];
-            NSDictionary *awayTeam = [jsonGame objectForKey:@"awayTeam"];
-            
-            game.homeTeam = [homeTeam objectForKey:@"name"];
-            game.awayTeam = [awayTeam objectForKey:@"name"];
+            game.homeTeam = [jsonGame objectForKey:@"homeTeam"];
+            game.awayTeam = [jsonGame objectForKey:@"awayTeam"];
 
-            game.homeScore = [homeTeam objectForKey:@"score"];
-            game.awayScore = [awayTeam objectForKey:@"score"];
+            game.homeScore = [jsonGame objectForKey:@"homeScore"];
+            game.awayScore = [jsonGame objectForKey:@"awayScore"];
             [games addObject:game];
         }
         NSLog(@"Games: %@", games);
+        self.liveScore = games;
         callback(games);
     }];
+}
 
+- (void)registerDevice:(NSData *)deviceToken {
+    const unsigned *tokenBytes = [deviceToken bytes];
+    NSString *hexToken = [NSString stringWithFormat:@"%08x%08x%08x%08x%08x%08x%08x%08x",
+                          ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),
+                          ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),
+                          ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];
+
+    NSString *urlString = [NSString stringWithFormat:@"http://%@:%@/registerDevice?token=%@", HOST, PORT, hexToken];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSLog(@"Response: %@", response);
+    }];
 }
 
 @end
